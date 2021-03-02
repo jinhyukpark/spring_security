@@ -1,0 +1,29 @@
+debug: true
+server:
+    port: 8080
+spring:
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        password: park2213
+        url: jdbc:mysql://54.180.150.143:3306/winger?autoReconnect=true
+        username: jin
+    devtools:
+        livereload:
+            enabled: true
+    flyway:
+        baseline-on-migrate: true
+        locations: classpath:db/migration
+        enabled: true
+    jpa:
+        generate-ddl: true
+        hibernate:
+            #ddl-auto: update
+            ddl-auto: update
+            #ddl-auto: validate
+            naming:
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        show-sql: true
